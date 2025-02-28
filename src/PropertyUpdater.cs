@@ -1,4 +1,5 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
 // PropertyUpdater.cs
@@ -17,6 +18,7 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
+
 #endregion
 
 using System;
@@ -28,7 +30,7 @@ public abstract class PropertyUpdater<TProp> : IPropertyUpdater<TProp>
 {
     protected PropertyUpdater( ILoggerFactory? loggerFactory = null )
     {
-        Logger = loggerFactory?.CreateLogger(GetType());
+        Logger = loggerFactory?.CreateLogger( GetType() );
     }
 
     protected ILogger? Logger { get; }

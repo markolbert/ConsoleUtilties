@@ -1,4 +1,5 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
 // Prompters.cs
@@ -17,6 +18,7 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
+
 #endregion
 
 using System;
@@ -31,11 +33,13 @@ namespace J4JSoftware.ConsoleUtilities;
 
 public static class Prompters
 {
-    public static T GetEnum<T>( T curValue,
+    public static T GetEnum<T>(
+        T curValue,
         T defaultValue,
         List<T>? values = null,
         ILogger? logger = null,
-        int indent = 4 )
+        int indent = 4
+    )
         where T : Enum
     {
         Colors.WriteLine( "Enter ",
@@ -119,7 +123,7 @@ public static class Prompters
         }
 
         if( values.Count == 0 )
-            return new List<T>();
+            return [];
 
         try
         {
@@ -129,7 +133,7 @@ public static class Prompters
         }
         catch
         {
-            return new List<T>();
+            return [];
         }
     }
 
@@ -139,6 +143,7 @@ public static class Prompters
         var sb = new StringBuilder();
 
         foreach( var curChar in input )
+        {
             switch( curChar )
             {
                 case ' ':
@@ -149,9 +154,7 @@ public static class Prompters
                         sb.Clear();
                     }
                     else
-                    {
                         sb.Append( curChar );
-                    }
 
                     break;
 
@@ -163,6 +166,7 @@ public static class Prompters
                     sb.Append( curChar );
                     break;
             }
+        }
 
         if( sb.Length > 0 )
             yield return sb.ToString();

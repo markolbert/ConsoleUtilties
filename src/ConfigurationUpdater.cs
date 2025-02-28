@@ -1,4 +1,5 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
 // ConfigurationUpdater.cs
@@ -17,6 +18,7 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
+
 #endregion
 
 using System;
@@ -77,8 +79,10 @@ public partial class ConfigurationUpdater<TConfig> : IConfigurationUpdater<TConf
         return false;
     }
 
-    public IConfigurationUpdater<TConfig> Property<TProp>( Expression<Func<TConfig, TProp>> propertySelector,
-        IPropertyUpdater<TProp> updater )
+    public IConfigurationUpdater<TConfig> Property<TProp>(
+        Expression<Func<TConfig, TProp>> propertySelector,
+        IPropertyUpdater<TProp> updater
+    )
     {
         var curExpr = propertySelector.Body;
         PropertyInfo? propInfo = null;
