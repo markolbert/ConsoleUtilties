@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<AssemblyName>J4JSoftware.ConsoleUtilities</AssemblyName>
 		<RootNamespace>J4JSoftware.ConsoleUtilities</RootNamespace>
 		<Nullable>enable</Nullable>
@@ -10,15 +11,26 @@
 		<Product>J4JSoftware Console Utilities Library</Product>
 		<Description>utilities for console applications</Description>
 		<Copyright>© Mark A. Olbert all rights reserved</Copyright>
-		<RepositoryUrl>https://github.com/markolbert/ProgrammingUtilities</RepositoryUrl>
+		<Version>2.0.0.0</Version>
+		<AssemblyVersion>2.0.0.0</AssemblyVersion>
+		<RepositoryUrl>https://github.com/markolbert/ConsoleUtilities</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.6.1.0</Version>
-		<AssemblyVersion>1.6.1.0</AssemblyVersion>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<PackageReleaseNotes>initial release</PackageReleaseNotes>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageLicenseFile>license.md</PackageLicenseFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Alba.CsConsoleFormat-NoXaml" Version="1.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="../readme.md" Pack="true" PackagePath="\" />
+		<None Include="../license.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
