@@ -2,7 +2,7 @@
 
 Enables run-time editing of configuration parameters in console apps on an as-needed basis.
 
-The change log is available [here](changes.md).
+The change log is available [here](docs/changes.md).
 
 This assembly targets Net 7 and has nullability enabled.
 
