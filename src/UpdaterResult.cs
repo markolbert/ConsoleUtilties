@@ -1,7 +1,8 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
-// IConfigurationUpdater.cs
+// UpdaterResult.cs
 //
 // This file is part of JumpForJoy Software's ConsoleUtilities.
 // 
@@ -17,17 +18,15 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
+
 #endregion
 
 namespace J4JSoftware.ConsoleUtilities;
 
-public interface IConfigurationUpdater
+public enum UpdaterResult
 {
-    bool Update( object config );
-}
-
-public interface IConfigurationUpdater<in TConfig> : IConfigurationUpdater
-    where TConfig : class
-{
-    bool Update( TConfig config );
+    OriginalOkay,
+    Changed,
+    InvalidValidator,
+    InvalidUserInput
 }

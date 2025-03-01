@@ -1,7 +1,8 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
-// ConfigurationUpdater.PropertyValidation.cs
+// IConfigurationUpdater.cs
 //
 // This file is part of JumpForJoy Software's ConsoleUtilities.
 // 
@@ -17,23 +18,18 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
-#endregion
 
-using System.Reflection;
+#endregion
 
 namespace J4JSoftware.ConsoleUtilities;
 
-public partial class ConfigurationUpdater<TConfig>
+public interface IConfigurationUpdater
 {
-    private class PropertyValidation
-    {
-        public PropertyValidation( PropertyInfo propInfo, IPropertyUpdater updater )
-        {
-            PropertyInfo = propInfo;
-            Updater = updater;
-        }
+    bool Update( object config );
+}
 
-        public PropertyInfo PropertyInfo { get; }
-        public IPropertyUpdater Updater { get; }
-    }
+public interface IConfigurationUpdater<in TConfig> : IConfigurationUpdater
+    where TConfig : class
+{
+    bool Update( TConfig config );
 }

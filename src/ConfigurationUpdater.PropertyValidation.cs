@@ -1,7 +1,8 @@
 ﻿#region copyright
+
 // Copyright (c) 2021, 2022, 2023 Mark A. Olbert 
 // https://www.JumpForJoySoftware.com
-// UpdaterResult.cs
+// ConfigurationUpdater.PropertyValidation.cs
 //
 // This file is part of JumpForJoy Software's ConsoleUtilities.
 // 
@@ -17,14 +18,18 @@
 // 
 // You should have received a copy of the GNU General Public License along 
 // with ConsoleUtilities. If not, see <https://www.gnu.org/licenses/>.
+
 #endregion
+
+using System.Reflection;
 
 namespace J4JSoftware.ConsoleUtilities;
 
-public enum UpdaterResult
+public partial class ConfigurationUpdater<TConfig>
 {
-    OriginalOkay,
-    Changed,
-    InvalidValidator,
-    InvalidUserInput
+    private class PropertyValidation( PropertyInfo propInfo, IPropertyUpdater updater )
+    {
+        public PropertyInfo PropertyInfo { get; } = propInfo;
+        public IPropertyUpdater Updater { get; } = updater;
+    }
 }
