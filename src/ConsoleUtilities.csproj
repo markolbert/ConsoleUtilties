@@ -18,7 +18,7 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-		<PackageReleaseNotes>initial release</PackageReleaseNotes>
+		<PackageReleaseNotes>updated to Net9</PackageReleaseNotes>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageLicenseFile>license.md</PackageLicenseFile>
 	</PropertyGroup>
